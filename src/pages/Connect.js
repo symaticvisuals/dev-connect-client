@@ -13,6 +13,18 @@ function Connect() {
     useEffect(() => {
     fetchData();
     }, []);
+
+    let [people, setPeople] = useState([]);
+
+    const fetchPeople = async () => {
+        const response = await fetch("/.netlify/functions/getPeople", );
+        const responseBody = await response.json();
+        setPeople(responseBody.data.users_by_roles.values);
+    };
+    
+    useEffect(() => {
+        fetchPeople();
+    }, []);
     return (
         <div>
             <Tags>
@@ -22,13 +34,17 @@ function Connect() {
                 
             </Tags>
             <CardContainer>
-                <Cards>
+            {people.map((p) => (
+                <Cards style={{background:`url(${p.profile_pic})`}}>
+                    
                     <Content>
-                    <h2>Name Surname</h2>
+                    <h2>{p.first_name}{p.last_name}</h2>
                     <button>+</button>
                     <button>Connect</button>
                     </Content>
+                   
                 </Cards>
+             ))}
             </CardContainer>
         </div>
     )
@@ -66,11 +82,13 @@ flex-wrap: wrap;
 
 const Cards = styled.div`
 position: relative;
+margin: 20px;
 width: 260px;
 height: 310px;
 padding: 10px;
 background: #C4C4C4;
 border-radius: 19px;
+
 `;
 
 const Content = styled.div`
