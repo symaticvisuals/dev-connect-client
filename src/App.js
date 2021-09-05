@@ -17,9 +17,6 @@ function App() {
     setRoles(responseBody);
   };
 
-  const fetchPeople = async () => {
-    
-  }
   useEffect(() => {
     fetchData();
   });

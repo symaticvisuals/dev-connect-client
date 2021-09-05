@@ -1,13 +1,16 @@
 const fetch = require("node-fetch");
-exports.handler = async function () {
+exports.handler = async function (event) {
+  console.log(event.body);
   const url = process.env.ASTRA_GRAPHQL_ENDPOINT;
-  const query = `query getAllRoles {
-         roles(value: { label: "role" }) {
-   values {
-     value
-  }
- }
-    }`;
+  const query = `query {
+  users_by_roles(value: { role: "Frontend Developer" }, orderBy: [username_ASC]){values{
+    first_name,
+    last_name,
+    emailID,
+    profile_pic
+  }}
+}
+`;
 
   const response = await fetch(url, {
     method: "POST",
@@ -24,7 +27,7 @@ exports.handler = async function () {
       body: JSON.stringify(reponseBody),
     };
   } catch (e) {
-      console.log(e)
+    console.log(e);
     return {
       statusCode: 500,
       body: JSON.stringify(e),
