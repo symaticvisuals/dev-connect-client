@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { createContext, useEffect, useState } from "react";
 
 
-
-
 function Connect() {
     let [roles, setRoles] = useState([]);
     const fetchData = async () => {
@@ -45,6 +43,7 @@ max-width: 100vw;
 padding: 50px;
 flex-wrap: wrap;
 `;
+
 const Tag = styled.div`
 display: flex;
 align-items: center;
@@ -57,12 +56,14 @@ p{
     margin: 25px 20px;
 }
 `;
+
 const CardContainer = styled.div`
 max-width: 100vw;
 padding: 50px;
 display: flex;
 flex-wrap: wrap;
 `;
+
 const Cards = styled.div`
 position: relative;
 width: 260px;
@@ -71,6 +72,7 @@ padding: 10px;
 background: #C4C4C4;
 border-radius: 19px;
 `;
+
 const Content = styled.div`
     position: absolute;
     bottom: 10px;

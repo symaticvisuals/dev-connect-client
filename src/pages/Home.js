@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
+import SignIn from "../components/SignIn";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -10,7 +11,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 function Home() {
   const classes = useStyles();
-  return <div className={classes.root}></div>;
+  return (
+    <div>
+      <SignIn></SignIn>
+    </div>
+  );
 }
 
 export default Home;
