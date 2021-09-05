@@ -8,25 +8,17 @@ import theme from "./styles";
 let User = createContext();
 function App() {
   let [user, setUser] = useState();
-  let [roles, setRoles] = useState([]);
+  
   let [people, setPeople] = useState(null);
-  const fetchData = async () => {
-    const response = await fetch("/.netlify/functions/getRoles");
-    const responseBody = await response.json();
-    setRoles(responseBody.data.roles.values);
-  };
+ 
+
 
   const fetchPeople = async () => {
-    const response = await fetch("/.netlify/functions/getPeople", {
-      method: "POST",
-      body: JSON.stringify({ role: "Backend Developer" }),
-    });
+    const response = await fetch("/.netlify/functions/getPeople", );
     const responseBody = await response.json();
     setPeople(responseBody.data.users_by_roles.values);
   };
-  useEffect(() => {
-    fetchData();
-  }, []);
+ 
 
   useEffect(() => {
     fetchPeople();

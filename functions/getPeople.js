@@ -1,10 +1,8 @@
 const fetch = require("node-fetch");
 exports.handler = async function (event) {
-    const body = JSON.parse(event.body);
-    const role = body.role;
   const url = process.env.ASTRA_GRAPHQL_ENDPOINT;
   const query = `query {
-  users_by_roles(value: { role: ${JSON.stringify(role)} }, orderBy: [username_ASC]){values{
+  users_by_roles(value: { role: "Frontend Developer"}, orderBy: [username_ASC]){values{
     first_name,
     last_name,
     emailID,
