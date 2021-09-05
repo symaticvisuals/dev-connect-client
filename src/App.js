@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Box, ThemeProvider } from "@material-ui/core";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -9,16 +9,15 @@ import theme from "./styles";
 let User = createContext();
 function App() {
   let [user, setUser] = useState();
-  
+
   // let [people, setPeople] = useState(null);
- 
+
   // const fetchPeople = async () => {
   //   const response = await fetch("/.netlify/functions/getPeople", );
   //   const responseBody = await response.json();
   //   setPeople(responseBody.data.users_by_roles.values);
   //   console.log(people)
   // };
- 
 
   // useEffect(() => {
   //   fetchPeople();
