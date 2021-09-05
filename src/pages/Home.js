@@ -1,16 +1,16 @@
-import { makeStyles } from "@material-ui/core";
+
 import React from "react";
 import SignIn from "../components/SignIn";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    minHeight: "100vh",
-    },
-  //create custom keyword for class styling 
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     width: "100%",
+//     minHeight: "100vh",
+//     },
+//   //create custom keyword for class styling 
+// }));
 function Home() {
-  const classes = useStyles();
+  
   return (
     <div>
       <SignIn></SignIn>
