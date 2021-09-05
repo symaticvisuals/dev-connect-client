@@ -9,19 +9,19 @@ let User = createContext();
 function App() {
   let [user, setUser] = useState();
   
-  let [people, setPeople] = useState(null);
+  // let [people, setPeople] = useState(null);
  
-  const fetchPeople = async () => {
-    const response = await fetch("/.netlify/functions/getPeople", );
-    const responseBody = await response.json();
-    setPeople(responseBody.data.users_by_roles.values);
-    console.log(people)
-  };
+  // const fetchPeople = async () => {
+  //   const response = await fetch("/.netlify/functions/getPeople", );
+  //   const responseBody = await response.json();
+  //   setPeople(responseBody.data.users_by_roles.values);
+  //   console.log(people)
+  // };
  
 
-  useEffect(() => {
-    fetchPeople();
-  }, []);
+  // useEffect(() => {
+  //   fetchPeople();
+  // }, []);
 
   return (
     <Box>
