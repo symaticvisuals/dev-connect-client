@@ -11,12 +11,11 @@ function App() {
   
   let [people, setPeople] = useState(null);
  
-
-
   const fetchPeople = async () => {
     const response = await fetch("/.netlify/functions/getPeople", );
     const responseBody = await response.json();
     setPeople(responseBody.data.users_by_roles.values);
+    console.log(people)
   };
  
 
