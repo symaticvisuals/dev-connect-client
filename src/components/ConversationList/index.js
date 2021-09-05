@@ -11,6 +11,7 @@ export default function ConversationList(props) {
   const [conversations, setConversations] = useState([]);
   useEffect(() => {
     getConversations()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
  const getConversations = () => {
