@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Box, ThemeProvider } from "@material-ui/core";
 import { createContext, useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
