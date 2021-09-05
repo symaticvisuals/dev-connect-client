@@ -7,7 +7,7 @@ const theme = createTheme({
 
             //Component name from https://material-ui.com/api/
       
-      MuiButton: {
+     
             // MuiButton: {
             //   text: {
             //     // Some CSS
@@ -25,6 +25,6 @@ const theme = createTheme({
             //     },
             //   },
             // },
-  },
+
     }});
 export default theme;
